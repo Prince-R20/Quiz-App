@@ -1,0 +1,42 @@
+[
+    {
+        "Question": "What does HTML stands for?",
+        "Option" : ["Hyper Text Markup Language",
+        "High Level Text Manager",
+        "Home Tool Markup Language",
+        "Hyperlink and text Management Language"],
+        "Answer": "Hyper Text Markup Language"
+    },
+    {
+        "Question": "Which tag is used to link an external CSS file in HTML?",
+        "Option" : ["<style>",
+        "<link>",
+        "<css>",
+        "<stylesheet>"],
+        "Answer": "<link>"
+    },
+    {
+        "Question": "Which CSS propertiy is used to change text color?",
+        "Option" : ["font-color",
+        "color",
+        "text-color",
+        "style-color"],
+        "Answer": "color"
+    },
+    {
+        "Question": "What does the C in CSS stand for?",
+        "Option" : ["Custom",
+        "Creative",
+        "Cascading",
+        "Current"],
+        "Answer": "Cascading"
+    },
+    {
+        "Question": "Which of these is a semantic HTML tag?",
+        "Option" : ["<div>",
+        "<span>",
+        "<article>",
+        "<style>"],
+        "Answer": "<article>"
+    }
+]
