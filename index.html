@@ -7,7 +7,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- A simple quiz app -->
+    <main>
+        <!-- A simple quiz app -->
+        <header>
+            <h1>QUIZ APP</h1>
+            <p>A multiple-choice quiz game</p>
+        </header>
+        <article id="intro">
+            <h3>Description</h3>
+
+            <ul>
+                <li>A series of questions will be asked on <b>frontend web development.</b></li>
+                <li>You will be answer 10 question in total</li>
+            </ul>
+            <h2>Good Luck</h2>
+
+            <button id="startQuiz" onclick="startQuiz()">Start Quiz</button>
+        </article>
+
+        <section id="question_section">
+            <h5 id="question_number"></h5>
+            <p id="question"></p>
+            <div id="question_option">
+                <!-- <fieldset>
+                    <input type="checkbox" id="something"><label for="something">Yes</label>
+                </fieldset>
+                <fieldset>
+                    <input type="checkbox" id="something"><label for="something">Yes</label>
+                </fieldset>
+                <fieldset>
+                    <input type="checkbox" id="something"><label for="something">Yes</label>
+                </fieldset>
+                <fieldset>
+                    <input type="checkbox" id="something"><label for="something">Yes</label>
+                </fieldset> -->
+            </div>
+            <div id="navigate">
+                <button>&#10096 Previous</button>
+                <button>Next &#10097</button>
+            </div>
+        </section>
+    </main>
 </body>
 <script src="index.js"></script>
 </html>

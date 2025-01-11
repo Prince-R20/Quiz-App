@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+:root{
+    --background: orange;
+    --color: black;
+    --orange-100: rgb(255, 188, 62);
+}
+body{
+    margin: 0;
+    background-color: var(--background);
+}
+header{
+    min-width: 100%;
+    text-align: center;
+    background-color: var(--color);
+    color: white;
+    padding: 20px;
+}
+header h1{
+    margin: 0;
+    font-size: 2.5rem;
+}
+header p{
+    margin: 0;
+    margin-top: 10px;
+    font-weight: bold;
+}
+article{
+    padding: 20px;
+    background-color: var(--orange-100);
+    width: clamp(50%, 50vh, 100%);
+    margin: auto;
+}
+article h3{
+    margin-bottom: 10px;
+}
+article ul{
+    line-height: 30px;
+    font-size: 0.9rem;
+    margin: 0;
+}
+article h2{
+    text-align: center;
+    color: rgb(156, 102, 1);
+    font-size: 2rem;
+}
+article button{
+    background-color: green;
+    color: white;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 10px;
+}
+article button:hover{
+    background-color: rgb(1, 187, 1);
+    outline: none;
+}
+article button:active{
+    background-color: rgb(9, 255, 9);
+    color: black;
+}
+section{
+    padding: 20px;
+    background-color: var(--orange-100);
+    width: clamp(70%, 50vh, 100%);
+    margin: auto;
+    display: none;
+    animation: fadein 1000ms ease-in;
+}
+section h5{
+    font-size: 1.5rem;
+    margin: 0;
+}
+section p{
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.7);
+}
+#question_option{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#question_option fieldset{
+    border: none;
+}
+#navigate{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+@keyframes fadein{
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}
+#navigate button{
+    padding: 15px 10px;
+    border-radius: 5px;
+    width: 110px;
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    background-color: var(--orange-100);
+    border: 2px solid white;
+}
+#navigate button:hover{
+    transform: scale(1.1);
+    transition: 500ms;
+    background-color: var(--background);
+    transition: ease-in-out;
+}
+input[type="checkbox"]{
+   accent-color: black;
+}

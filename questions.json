@@ -1,5 +1,6 @@
 [
     {
+        "num" : 1,
         "Question": "What does HTML stands for?",
         "Option" : ["Hyper Text Markup Language",
         "High Level Text Manager",
@@ -8,6 +9,7 @@
         "Answer": "Hyper Text Markup Language"
     },
     {
+        "num" : 2,
         "Question": "Which tag is used to link an external CSS file in HTML?",
         "Option" : ["<style>",
         "<link>",
@@ -16,6 +18,7 @@
         "Answer": "<link>"
     },
     {
+        "num" : 3,
         "Question": "Which CSS propertiy is used to change text color?",
         "Option" : ["font-color",
         "color",
@@ -24,6 +27,7 @@
         "Answer": "color"
     },
     {
+        "num" : 4,
         "Question": "What does the C in CSS stand for?",
         "Option" : ["Custom",
         "Creative",
@@ -32,11 +36,57 @@
         "Answer": "Cascading"
     },
     {
+        "num" : 5,
         "Question": "Which of these is a semantic HTML tag?",
         "Option" : ["<div>",
         "<span>",
         "<article>",
         "<style>"],
         "Answer": "<article>"
+    },
+    {
+        "num" : 6,
+        "Question": "Which pseudo-class targets the element when the mouse hovers over it?",
+        "Option" : [":hover",
+        ":focus",
+        ":active",
+        ":target"],
+        "Answer": ":focus"
+    },
+    {
+        "num" : 7,
+        "Question": "What is the first rule of coding?",
+        "Option" : ["Nevr talk about coding",
+        "Google is your best friend",
+        "Add comments",
+        "All of the above"],
+        "Answer": "Add comments"
+    },
+    {
+        "num" : 8,
+        "Question": "Which tag is used to create a hyperlink in HTML?",
+        "Option" : ["<a>",
+        "<link>",
+        "<hyper>",
+        "<url>"],
+        "Answer": "<a>"
+    },
+    {
+        "num" : 9,
+        "Question": "What does RESPONSIVENESS mean in web design?",
+        "Option" : ["Adapting the layout to different screen size",
+        "Sending emails to users",
+        "Faster page loading time",
+        "Integrating with a database"],
+        "Answer": "Adapting the layout to different screen size"
+    },
+    {
+        "num" : 10,
+        "Question": "What does console.log() do in javascript?",
+        "Option" : ["Logs the user out",
+        "Prints a message to the brower's console",
+        "Creates a popup alert",
+        "Prints a message to the brower's console"],
+        "Answer": "<a>"
     }
 ]
