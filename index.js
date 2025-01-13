@@ -8,11 +8,14 @@ const question_option = document.getElementById("question_option");
 const previousQuestion = document.getElementById("previousQuestion");
 const nextQuestion = document.getElementById("nextQuestion");
 const navigate = document.getElementById("navigate");
-const submit = document.getElementById("submit")
+const submit = document.getElementById("submit");
+const scoreDiv = document.getElementById("scoreDiv");
+const yourScore = document.getElementById("yourScore");
+const questionNum = document.getElementById("questionNum");
 
 let currentQuestionIndex = 0;
 let track = currentQuestionIndex+1;
-// let score = 0;
+let score = 0;
 let selectedOption = [];
 let questionBank;
 let ID;
@@ -60,10 +63,12 @@ function loadOption(currentQuestion){
         input.className = "option"
         input.addEventListener("click", () => {
             if(selectedOption[currentQuestionIndex] !== undefined){
-                selectedOption.pop(input.id)
+                selectedOption[currentQuestionIndex] = input.id
+            }else{
+                selectedOption.push(input.id);
             }
-            selectedOption.push(input.id)
-            console.log(selectedOption)
+            showSubmitButton();
+            checkAnswer();
         })
 
         fieldSet.append(input);
@@ -71,9 +76,11 @@ function loadOption(currentQuestion){
         question_option.append(fieldSet);
     });
 }
+
 function next (questionBank){
-    track++;
-    console.log(track)
+    if(track <= questionBank.length){
+        track++;
+    }
     if(track < questionBank.length){
         // getAnswer(questionBank);
         // checkAnswer(questionBank)
@@ -82,12 +89,6 @@ function next (questionBank){
     }else if(track == questionBank.length){
         currentQuestionIndex++;
         loadQuestion(questionBank);
-
-        ID = setTimeout(() => {
-            submit.style.display = "block"
-            nextQuestion.style.display = "none"
-            previousQuestion.style.display = "none"
-        }, 5000)
     }
 }
 
@@ -100,8 +101,30 @@ function previous (questionBank){
     }
 }
 
-function checkAnswer(questionBank){
-    
+function checkAnswer(){
+    if (selectedOption[currentQuestionIndex] === questionBank[currentQuestionIndex].Answer){
+        score++
+    }
+}
+function showScore(){
+    question_section.style.display = "none";
+    submit.style.display = "none";
+
+    scoreDiv.style.display = "block";
+    yourScore.textContent = score;
+    questionNum.textContent = questionBank.length;
+}
+
+function showSubmitButton(){
+    switch (questionBank.length) {
+        case selectedOption.length:
+            ID = setTimeout(() => {
+                submit.style.display = "block"
+            }, 3000)
+            break;
+        default:
+            break;
+    }
 }
 //Fetch questions from JSON file
 async function fetchQuestion (){

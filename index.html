@@ -28,26 +28,20 @@
         <section id="question_section">
             <h5 id="question_number"></h5>
             <p id="question"></p>
-            <div id="question_option">
-                <!-- <fieldset>
-                    <input type="checkbox" id="something"><label for="something">Yes</label>
-                </fieldset>
-                <fieldset>
-                    <input type="checkbox" id="something"><label for="something">Yes</label>
-                </fieldset>
-                <fieldset>
-                    <input type="checkbox" id="something"><label for="something">Yes</label>
-                </fieldset>
-                <fieldset>
-                    <input type="checkbox" id="something"><label for="something">Yes</label>
-                </fieldset> -->
-            </div>
+            <div id="question_option"> </div>
             <div id="navigate">
                 <button id="previousQuestion">&#10096 Previous</button>
                 <button id="nextQuestion">Next &#10097</button>
-                <button id="submit">Submit</button>
             </div>
         </section>
+        <button id="submit" onclick="showScore()">Submit</button>
+        <div id="scoreDiv">
+            <section id="scoreSection">
+                <h1>CONGRATULATIONS</h1>
+                <p>You scored:</p>
+                <h2><span id="yourScore"></span> of <span id="questionNum"></span></h2>
+            </section>
+        </div>
     </main>
 </body>
 <script src="index.js"></script>

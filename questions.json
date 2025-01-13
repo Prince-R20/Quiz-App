@@ -51,7 +51,7 @@
         ":focus",
         ":active",
         ":target"],
-        "Answer": ":focus"
+        "Answer": ":hover"
     },
     {
         "num" : 7,
@@ -87,6 +87,6 @@
         "Prints a message to the brower's console",
         "Creates a popup alert",
         "Prints a message to the browers console"],
-        "Answer": "<a>"
+        "Answer": "Prints a message to the brower's console"
     }
 ]

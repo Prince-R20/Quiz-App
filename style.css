@@ -6,10 +6,13 @@
     --background: orange;
     --color: black;
     --orange-100: rgb(255, 188, 62);
+
+    --top: 0;
 }
 body{
     margin: 0;
     background-color: var(--background);
+    height: 100vh;
 }
 header{
     min-width: 100%;
@@ -63,7 +66,7 @@ article button:active{
     background-color: rgb(9, 255, 9);
     color: black;
 }
-section{
+#question_section{
     padding: 20px;
     background-color: var(--orange-100);
     width: clamp(70%, 50vh, 100%);
@@ -71,11 +74,11 @@ section{
     display: none;
     animation: fadein 1000ms ease-in;
 }
-section h5{
+#question_section h5{
     font-size: 1.5rem;
     margin: 0;
 }
-section p{
+#question_section p{
     font-size: 1rem;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.7);
@@ -124,6 +127,54 @@ label{
     line-height: 30px;
 }
 #submit{
-    color: green;
+    padding: 15px 10px;
+    border-radius: 5px;
+    width: 110px;
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    background-color: green;
+    border: 2px solid white;
+    color: white;
     display: none;
+    margin: auto;
+}
+#submit:hover{
+    transform: scale(1.1);
+    transition: 500ms;
+    background-color: var(--background);
+    transition: ease-in-out;
+}
+#submit:Active{
+    background-color: white;
+}
+#scoreSection{
+    /* border: 2px solid; */
+    display: flex;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#scoreDiv{
+    display: none;
+}
+#scoreSection h1{
+    font-size: 3rem;
+    color: green;
+    transform: rotate(5deg);
+}
+#scoreSection p{
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    transform: rotate(-5deg);
+    padding: 5px 8px;
+}
+#scoreSection h2{
+    font-size: 3rem;
+    color: green;
+    outline: 5px solid;
+    padding: 15px 20px;
 }
