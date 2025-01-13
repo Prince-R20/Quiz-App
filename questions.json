@@ -86,7 +86,7 @@
         "Option" : ["Logs the user out",
         "Prints a message to the brower's console",
         "Creates a popup alert",
-        "Prints a message to the brower's console"],
+        "Prints a message to the browers console"],
         "Answer": "<a>"
     }
 ]

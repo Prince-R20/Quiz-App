@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUiz App</title>
+    <title>Quiz App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
             </ul>
             <h2>Good Luck</h2>
 
-            <button id="startQuiz" onclick="startQuiz()">Start Quiz</button>
+            <button id="startQuiz">Start Quiz</button>
         </article>
 
         <section id="question_section">
@@ -43,8 +43,9 @@
                 </fieldset> -->
             </div>
             <div id="navigate">
-                <button>&#10096 Previous</button>
-                <button>Next &#10097</button>
+                <button id="previousQuestion">&#10096 Previous</button>
+                <button id="nextQuestion">Next &#10097</button>
+                <button id="submit">Submit</button>
             </div>
         </section>
     </main>

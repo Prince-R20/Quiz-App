@@ -113,6 +113,17 @@ section p{
     background-color: var(--background);
     transition: ease-in-out;
 }
-input[type="checkbox"]{
+#navigate button:Active{
+    background-color: white;
+}
+input[type="radio"]{
    accent-color: black;
+}
+label{
+    margin-left: 5px;
+    line-height: 30px;
+}
+#submit{
+    color: green;
+    display: none;
 }
