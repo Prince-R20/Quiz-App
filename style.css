@@ -161,19 +161,19 @@ label{
     display: none;
 }
 #scoreSection h1{
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     color: green;
     transform: rotate(5deg);
 }
 #scoreSection p{
     background-color: black;
     color: white;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2rem);
     transform: rotate(-5deg);
     padding: 5px 8px;
 }
 #scoreSection h2{
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 5vw, 3rem);
     color: green;
     outline: 5px solid;
     padding: 15px 20px;
