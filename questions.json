@@ -19,7 +19,7 @@
     },
     {
         "num" : 3,
-        "Question": "Which CSS propertiy is used to change text color?",
+        "Question": "Which CSS property is used to change text color?",
         "Option" : ["font-color",
         "color",
         "text-color",
@@ -56,7 +56,7 @@
     {
         "num" : 7,
         "Question": "What is the first rule of coding?",
-        "Option" : ["Nevr talk about coding",
+        "Option" : ["Never talk about coding",
         "Google is your best friend",
         "Add comments",
         "All of the above"],
@@ -86,7 +86,7 @@
         "Option" : ["Logs the user out",
         "Prints a message to the brower's console",
         "Creates a popup alert",
-        "Prints a message to the browers console"],
+        "Clears the screen"],
         "Answer": "Prints a message to the brower's console"
     }
 ]
