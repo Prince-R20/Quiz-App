@@ -49,7 +49,6 @@ function loadQuestion(bank){
 
 function loadOption(currentQuestion){
     const Options = currentQuestion.Options
-    console.log(Options)
     Options.forEach(optionArray => {
         const fieldSet = document.createElement("fieldSet");
         const input = document.createElement("input");
