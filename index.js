@@ -19,6 +19,7 @@ let score = 0;
 let selectedOption = [];
 let questionBank;
 let ID;
+let checked;
 
 startQuiz.addEventListener("click", async () => {
     intro.style.display = "none";
@@ -47,30 +48,45 @@ function loadQuestion(bank){
 }
 
 function loadOption(currentQuestion){
-    const option = currentQuestion.Option
-    
-    option.forEach(element => {
+    const Options = currentQuestion.Options
+    console.log(Options)
+    Options.forEach(optionArray => {
         const fieldSet = document.createElement("fieldSet");
         const input = document.createElement("input");
         const label = document.createElement("label");
 
-        label.htmlFor = element
-        label.textContent = element;
+        label.htmlFor = optionArray.option
+        label.textContent = optionArray.option;
         
         input.type = "radio";
         input.name = "check";
+        input.checked = false
         input.id = label.htmlFor;
-        input.className = "option"
+        input.className = "option";
+
+        //if the option has been selected it will remain selected while navigating questions
+        if(optionArray.checked == true){
+            input.checked = true
+        }
+
         input.addEventListener("click", () => {
             if(selectedOption[currentQuestionIndex] !== undefined){
-                selectedOption[currentQuestionIndex] = input.id
+                //iterating true the optionArray, if checked == is true, the optionArray == false
+                Options.forEach( optionArray => {
+                    if(optionArray.checked == true){
+                        optionArray.checked = false;
+                    };
+                })
+
+                selectedOption[currentQuestionIndex] = input.id;
+                optionArray.checked = true;
             }else{
                 selectedOption.push(input.id);
+                optionArray.checked = true;
             }
             showSubmitButton();
             checkAnswer();
         })
-
         fieldSet.append(input);
         fieldSet.append(label);
         question_option.append(fieldSet);
@@ -106,6 +122,7 @@ function checkAnswer(){
         score++
     }
 }
+
 function showScore(){
     question_section.style.display = "none";
     submit.style.display = "none";
