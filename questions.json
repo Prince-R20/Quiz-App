@@ -6,6 +6,10 @@
         "High Level Text Manager",
         "Home Tool Markup Language",
         "Hyperlink and text Management Language"],
+        "Options" : [{"option" : "Hyper Text Markup Language", "checked": false},
+                    {"option": "High Level Text Manager", "checked": false},
+                    {"option": "Home Tool Markup Language", "checked": false},
+                    {"option": "Hyperlink and text Management Language", "checked": false}],
         "Answer": "Hyper Text Markup Language"
     },
     {
