@@ -14,11 +14,10 @@ const yourScore = document.getElementById("yourScore");
 const questionNum = document.getElementById("questionNum");
 
 let currentQuestionIndex = 0;
-let track = currentQuestionIndex+1;
+let track = 1;
 let score = 0;
 let selectedOption = [];
 let questionBank;
-let ID;
 let checked;
 
 startQuiz.addEventListener("click", async () => {
@@ -83,8 +82,8 @@ function loadOption(currentQuestion){
                 selectedOption.push(input.id);
                 optionArray.checked = true;
             }
-            showSubmitButton();
             checkAnswer();
+            showSubmitButton();
         })
         fieldSet.append(input);
         fieldSet.append(label);
@@ -93,16 +92,11 @@ function loadOption(currentQuestion){
 }
 
 function next (questionBank){
-    if(track <= questionBank.length){
-        track++;
-    }
+    
     if(track < questionBank.length){
-        // getAnswer(questionBank);
-        // checkAnswer(questionBank)
+        track++;
         currentQuestionIndex++;
-        loadQuestion(questionBank);
-    }else if(track == questionBank.length){
-        currentQuestionIndex++;
+
         loadQuestion(questionBank);
     }
 }
@@ -112,7 +106,6 @@ function previous (questionBank){
         track--
         currentQuestionIndex--;
         loadQuestion(questionBank);
-        clearInterval(ID)
     }
 }
 
@@ -134,11 +127,9 @@ function showScore(){
 function showSubmitButton(){
     switch (questionBank.length) {
         case selectedOption.length:
-            ID = setTimeout(() => {
+            setTimeout(() => {
                 submit.style.display = "block"
-            }, 3000)
-            break;
-        default:
+            }, 0)
             break;
     }
 }
