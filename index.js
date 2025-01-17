@@ -16,7 +16,7 @@ const questionNum = document.getElementById("questionNum");
 let currentQuestionIndex = 0;
 let track = 1;
 let score = 0;
-let selectedOption = [];
+let selectedOption = []; //the user option is saved here
 let questionBank;
 let checked;
 
@@ -26,6 +26,9 @@ startQuiz.addEventListener("click", async () => {
 
     questionBank = await fetchQuestion();
     loadQuestion(questionBank);
+
+    selectedOption.length = questionBank.length; //defining the size of the array
+    selectedOption.fill(null) //filling the array with null at initial
 
     nextQuestion.addEventListener("click",() => {
         next(questionBank)
@@ -40,9 +43,8 @@ function loadQuestion(bank){
 
     question_number.textContent = `Question ${currentQuestion.num}`;
     question.textContent = currentQuestion.Question;
-
     question_option.textContent = "" //clear previous option
-
+    
     loadOption(currentQuestion);
 }
 
@@ -67,28 +69,28 @@ function loadOption(currentQuestion){
             input.checked = true
         }
 
-        input.addEventListener("click", () => {
-            if(selectedOption[currentQuestionIndex] !== undefined){
-                //iterating true the optionArray, if checked == is true, the optionArray == false
-                Options.forEach( optionArray => {
-                    if(optionArray.checked == true){
-                        optionArray.checked = false;
-                    };
-                })
-
-                selectedOption[currentQuestionIndex] = input.id;
-                optionArray.checked = true;
-            }else{
-                selectedOption.push(input.id);
-                optionArray.checked = true;
-            }
-            checkAnswer();
-            showSubmitButton();
-        })
         fieldSet.append(input);
         fieldSet.append(label);
         question_option.append(fieldSet);
+
+        input.addEventListener("click", () => {
+            optionSelection(Options, input, optionArray) //Function to add option, and change option
+            showSubmitButton(); //Shows button when all question has been attempted
+        })
     });
+}
+
+//Function to select options and more
+function optionSelection(Options, input, optionArray){
+    //Going through option, if any option is checked true set it to false. This is to switch options 
+    Options.forEach(optionArray => {
+        if(optionArray.checked == true){
+            optionArray.checked = false;
+        };
+    })
+
+    selectedOption[currentQuestionIndex] = input.id; //adding the selected option to the array at its given index
+    optionArray.checked = true; //setting the checked property to true when selected
 }
 
 function next (questionBank){
@@ -110,12 +112,15 @@ function previous (questionBank){
 }
 
 function checkAnswer(){
-    if (selectedOption[currentQuestionIndex] === questionBank[currentQuestionIndex].Answer){
-        score++
-    }
+    selectedOption.forEach(option =>{
+        if(option === questionBank[selectedOption.indexOf(option)].Answer){
+            score++
+        }
+    })
 }
 
 function showScore(){
+    checkAnswer(); //Function to check answer and add score
     question_section.style.display = "none";
     submit.style.display = "none";
 
