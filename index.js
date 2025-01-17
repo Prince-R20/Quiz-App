@@ -130,13 +130,15 @@ function showScore(){
 }
 
 function showSubmitButton(){
-    switch (questionBank.length) {
-        case selectedOption.length:
-            setTimeout(() => {
-                submit.style.display = "block"
-            }, 0)
-            break;
-    }
+   if(!selectedOption.includes(null)){
+        switch (questionBank.length) {
+            case selectedOption.length:
+                setTimeout(() => {
+                    submit.style.display = "block"
+                }, 0)
+                break;
+        }
+   }
 }
 //Fetch questions from JSON file
 async function fetchQuestion (){
